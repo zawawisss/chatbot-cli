@@ -1,0 +1,1 @@
+{"version":3,"file":"WebSearchTools.d.ts","sourceRoot":"","sources":["../../src/tools/WebSearchTools.ts"],"names":[],"mappings":"AAEA,OAAO,EAAE,cAAc,EAAE,MAAM,uBAAuB,CAAC;AAEvD,qBAAa,cAAc;IACzB,MAAM,CAAC,kBAAkB,IAAI,cAAc,EAAE;WA6BhC,SAAS,CAAC,KAAK,EAAE,MAAM,EAAE,MAAM,GAAE,OAAc,EAAE,MAAM,GAAE,MAAgB,GAAG,OAAO,CAAC,GAAG,CAAC;CAsCtG"}

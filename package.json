@@ -1,0 +1,71 @@
+{
+  "name": "multi-provider-chatbot-cli",
+  "version": "1.0.0",
+  "description": "Multi-provider chatbot CLI supporting Gemini, DeepSeek API, and Ollama",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "chatbot": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node dist/index.js",
+    "test": "jest --config jest.config.ts",
+    "lint": "eslint . --ext .ts",
+    "format": "prettier --write .",
+    "prepare": "npm run build",
+    "health-check": "node dist/index.js health",
+    "list-sessions": "node dist/index.js sessions",
+    "list-tools": "node dist/index.js tools",
+    "setup": "node dist/index.js --setup",
+    "benchmark": "node dist/index.js -p deepseek -q 'Calculate 25 * 48 + 17' && node dist/index.js -p gemini -q 'Calculate 25 * 48 + 17'",
+    "clean": "rm -rf dist conversations/*.json",
+    "install-global": "npm run build && npm link",
+    "uninstall-global": "npm unlink"
+  },
+  "keywords": [
+    "chatbot",
+    "cli",
+    "gemini",
+    "deepseek",
+    "ollama",
+    "ai"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "@google/generative-ai": "^0.19.0",
+    "@types/node": "^20.11.24",
+    "@types/node-fetch": "^2.6.12",
+    "axios": "^1.6.7",
+    "boxen": "^8.0.1",
+    "chalk": "^5.3.0",
+    "cli-table3": "^0.6.5",
+    "commander": "^12.0.0",
+    "dotenv": "^16.4.5",
+    "figlet": "^1.8.2",
+    "gradient-string": "^3.0.0",
+    "inquirer": "^9.2.15",
+    "node-fetch": "^3.3.2",
+    "ora": "^8.0.1",
+    "strip-ansi": "^7.1.0",
+    "terminal-kit": "^3.0.1",
+    "typescript": "^5.3.3",
+    "yargs": "^17.7.2"
+  },
+  "devDependencies": {
+    "@types/glob": "^8.1.0",
+    "@types/inquirer": "^9.0.7",
+    "@types/jest": "^29.5.14",
+    "@types/yargs": "^17.0.32",
+    "eslint": "^8.57.0",
+    "jest": "^29.7.0",
+    "prettier": "^3.2.5",
+    "ts-jest": "^29.4.0",
+    "ts-node": "^10.9.2"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
